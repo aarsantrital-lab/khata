@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ne" translate="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="google" content="notranslate" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f766e" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Khata" />
+    <meta name="description" content="Offline-first shop ledger for a VAT-registered wholesale shop in Nepal." />
+    <title>Khata — पसलको हिसाब</title>
+    <script id="theme-boot">
+      (function () {
+        var bars = { light: '#0f766e', dark: '#14201f', purple: '#6d28d9', night: '#0c1230', marigold: '#c2410c' }
+        var choice = 'auto'
+        try {
+          choice = localStorage.getItem('khata.theme') || 'auto'
+        } catch (e) {}
+        if (choice !== 'auto' && !bars[choice]) choice = 'auto'
+        var theme = choice === 'auto' ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : choice
+        var dark = theme === 'dark' || theme === 'night'
+        var root = document.documentElement
+        root.setAttribute('data-theme', theme)
+        if (dark) root.classList.add('dark')
+        root.style.colorScheme = dark ? 'dark' : 'light'
+        var meta = document.querySelector('meta[name="theme-color"]')
+        if (meta) meta.setAttribute('content', bars[theme])
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
