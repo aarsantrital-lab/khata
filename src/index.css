@@ -1,0 +1,269 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource/mukta/400.css";
+@import "@fontsource/mukta/500.css";
+@import "@fontsource/mukta/600.css";
+@import "@fontsource/mukta/700.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: 'Mukta', 'Noto Sans Devanagari', system-ui, sans-serif;
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-good: var(--good);
+  --color-bad: var(--bad);
+  --color-warn: var(--warn);
+  --color-warn-strong: var(--warn-strong);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: oklch(0.985 0.003 180);
+  --foreground: oklch(0.2 0.02 200);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.02 200);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.02 200);
+  --primary: oklch(0.5 0.1 186);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.95 0.02 186);
+  --secondary-foreground: oklch(0.3 0.06 186);
+  --muted: oklch(0.96 0.006 186);
+  --muted-foreground: oklch(0.48 0.02 200);
+  --accent: oklch(0.95 0.02 186);
+  --accent-foreground: oklch(0.3 0.06 186);
+  --destructive: oklch(0.56 0.2 25);
+  --border: oklch(0.91 0.01 190);
+  --input: oklch(0.88 0.012 190);
+  --ring: oklch(0.6 0.1 186);
+  --good: oklch(0.55 0.15 150);
+  --bad: oklch(0.56 0.2 25);
+  --warn: oklch(0.68 0.15 70);
+  --warn-strong: oklch(0.5 0.12 70);
+  --radius: 0.8rem;
+}
+
+[data-theme='dark'] {
+  --background: oklch(0.18 0.012 200);
+  --foreground: oklch(0.95 0.006 190);
+  --card: oklch(0.225 0.014 200);
+  --card-foreground: oklch(0.95 0.006 190);
+  --popover: oklch(0.245 0.015 200);
+  --popover-foreground: oklch(0.95 0.006 190);
+  --primary: oklch(0.74 0.11 182);
+  --primary-foreground: oklch(0.18 0.03 190);
+  --secondary: oklch(0.3 0.03 190);
+  --secondary-foreground: oklch(0.9 0.03 186);
+  --muted: oklch(0.27 0.012 200);
+  --muted-foreground: oklch(0.74 0.014 200);
+  --accent: oklch(0.31 0.03 190);
+  --accent-foreground: oklch(0.92 0.03 186);
+  --destructive: oklch(0.7 0.18 25);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 17%);
+  --ring: oklch(0.66 0.1 186);
+  --good: oklch(0.77 0.15 150);
+  --bad: oklch(0.72 0.17 25);
+  --warn: oklch(0.8 0.14 75);
+  --warn-strong: oklch(0.84 0.13 80);
+}
+
+[data-theme='purple'] {
+  --background: oklch(0.985 0.006 300);
+  --foreground: oklch(0.22 0.03 300);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.03 300);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.03 300);
+  --primary: oklch(0.5 0.2 293);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.95 0.03 300);
+  --secondary-foreground: oklch(0.36 0.13 293);
+  --muted: oklch(0.965 0.01 300);
+  --muted-foreground: oklch(0.5 0.03 300);
+  --accent: oklch(0.94 0.04 300);
+  --accent-foreground: oklch(0.36 0.13 293);
+  --border: oklch(0.91 0.02 300);
+  --input: oklch(0.88 0.025 300);
+  --ring: oklch(0.6 0.17 293);
+}
+
+[data-theme='night'] {
+  --background: oklch(0.17 0.045 272);
+  --foreground: oklch(0.95 0.012 260);
+  --card: oklch(0.22 0.05 270);
+  --card-foreground: oklch(0.95 0.012 260);
+  --popover: oklch(0.245 0.055 270);
+  --popover-foreground: oklch(0.95 0.012 260);
+  --primary: oklch(0.8 0.1 240);
+  --primary-foreground: oklch(0.18 0.05 268);
+  --secondary: oklch(0.29 0.06 268);
+  --secondary-foreground: oklch(0.9 0.04 245);
+  --muted: oklch(0.26 0.045 270);
+  --muted-foreground: oklch(0.76 0.03 260);
+  --accent: oklch(0.3 0.06 268);
+  --accent-foreground: oklch(0.92 0.04 245);
+  --destructive: oklch(0.72 0.17 22);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 17%);
+  --ring: oklch(0.7 0.1 240);
+  --good: oklch(0.78 0.15 155);
+  --bad: oklch(0.73 0.16 22);
+  --warn: oklch(0.82 0.14 80);
+  --warn-strong: oklch(0.86 0.13 85);
+}
+
+[data-theme='marigold'] {
+  --background: oklch(0.985 0.012 85);
+  --foreground: oklch(0.24 0.04 50);
+  --card: oklch(1 0.004 85);
+  --card-foreground: oklch(0.24 0.04 50);
+  --popover: oklch(1 0.004 85);
+  --popover-foreground: oklch(0.24 0.04 50);
+  --primary: oklch(0.57 0.16 48);
+  --primary-foreground: oklch(0.99 0.005 85);
+  --secondary: oklch(0.95 0.04 80);
+  --secondary-foreground: oklch(0.38 0.1 50);
+  --muted: oklch(0.965 0.016 80);
+  --muted-foreground: oklch(0.5 0.04 60);
+  --accent: oklch(0.94 0.05 80);
+  --accent-foreground: oklch(0.38 0.1 50);
+  --border: oklch(0.9 0.03 80);
+  --input: oklch(0.87 0.04 80);
+  --ring: oklch(0.7 0.15 60);
+  --warn-strong: oklch(0.48 0.12 65);
+}
+
+/* Bill copies, statements and books are paper: they keep the light colours in every theme. */
+.print-area {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.2 0.02 200);
+  --card: oklch(1 0 0);
+  --muted: oklch(0.96 0.006 186);
+  --muted-foreground: oklch(0.48 0.02 200);
+  --border: oklch(0.91 0.01 190);
+  color-scheme: light;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    font-size: 17px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  @media (min-width: 1024px) {
+    html {
+      font-size: 16px;
+    }
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    overscroll-behavior-y: contain;
+  }
+  button,
+  [role='button'] {
+    cursor: pointer;
+  }
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Night sky: a faint, fixed star field behind the cards. */
+[data-theme='night'] body {
+  background-image:
+    radial-gradient(1px 1px at 23px 41px, oklch(1 0 0 / 0.55), transparent 60%),
+    radial-gradient(1px 1px at 97px 13px, oklch(1 0 0 / 0.35), transparent 60%),
+    radial-gradient(1.5px 1.5px at 151px 88px, oklch(0.95 0.05 90 / 0.5), transparent 60%),
+    radial-gradient(1px 1px at 211px 157px, oklch(1 0 0 / 0.4), transparent 60%),
+    radial-gradient(1px 1px at 61px 199px, oklch(1 0 0 / 0.3), transparent 60%),
+    radial-gradient(1.5px 1.5px at 263px 233px, oklch(0.9 0.04 240 / 0.45), transparent 60%),
+    radial-gradient(1px 1px at 131px 271px, oklch(1 0 0 / 0.35), transparent 60%),
+    radial-gradient(1px 1px at 283px 37px, oklch(1 0 0 / 0.3), transparent 60%),
+    radial-gradient(ellipse 120% 60% at 50% -10%, oklch(0.32 0.08 275 / 0.55), transparent 70%);
+  background-size:
+    300px 300px,
+    300px 300px,
+    300px 300px,
+    300px 300px,
+    300px 300px,
+    300px 300px,
+    300px 300px,
+    300px 300px,
+    100% 100%;
+  background-attachment: fixed;
+}
+
+/* A short fade-in when a screen opens. Fill mode "backwards" leaves no transform behind,
+   so fixed and sticky children keep working once the animation ends. */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+.page-enter {
+  animation: page-enter 180ms ease-out backwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-enter {
+    animation: none;
+  }
+}
+
+/* Printing: only the document being viewed is printed. */
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  .print-area,
+  .print-area * {
+    visibility: visible !important;
+  }
+  .print-area {
+    position: absolute !important;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
